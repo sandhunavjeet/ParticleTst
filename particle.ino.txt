@@ -1,0 +1,27 @@
+﻿// This #include statement was automatically added by the Particle IDE.
+
+
+#include <InternetButton.h>
+InternetButton b = InternetButton();
+int turnonled(String time);
+
+
+void setup() {
+    b.begin();
+ Particle.function("turnonled", turnonled);
+}
+
+
+void loop() {
+
+
+}
+
+
+int turnonled(String time)
+{
+  int num = time.toInt() / 2;
+  
+   b.ledOn(num, 0, 0, 255);;
+  return 1;
+}
